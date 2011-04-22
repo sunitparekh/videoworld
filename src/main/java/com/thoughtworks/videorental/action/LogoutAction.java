@@ -1,24 +1,23 @@
 package com.thoughtworks.videorental.action;
 
-import java.util.Map;
-
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
 
 public class LogoutAction extends ActionSupport implements SessionAware {
 
-	private SessionMap<String, Object> session;
+    private SessionMap<String, Object> session;
 
-	@Override
-	public void setSession(Map<String, Object> session) {
-		this.session = (SessionMap<String, Object>) session;
-	}
+    @Override
+    public void setSession(Map<String, Object> session) {
+        this.session = (SessionMap<String, Object>) session;
+    }
 
-	@Override
-	public String execute() throws Exception {
-		session.invalidate();
-		return SUCCESS;
-	}
+    @Override
+    public String execute() throws Exception {
+        session.invalidate();
+        return SUCCESS;
+    }
 }
