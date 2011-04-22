@@ -74,7 +74,18 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/src/unit/resources" />
+          <root url="file://$MODULE_DIR$/src/util/java" />
+        </sourceRoots>
       </configuration>
+      <facet type="Struts2" name="Struts 2">
+        <configuration>
+          <propertiesKeys disabled="false" />
+        </configuration>
+      </facet>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
