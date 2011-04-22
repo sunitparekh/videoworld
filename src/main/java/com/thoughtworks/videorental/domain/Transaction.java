@@ -1,6 +1,6 @@
 package com.thoughtworks.videorental.domain;
 
-import com.thoughtworks.datetime.LocalDateTime;
+import org.joda.time.LocalDateTime;
 
 import java.util.Collections;
 import java.util.HashSet;

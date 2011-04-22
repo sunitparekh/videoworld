@@ -1,8 +1,7 @@
 package com.thoughtworks.videorental.domain;
 
-import com.thoughtworks.datetime.Duration;
-import com.thoughtworks.datetime.LocalDate;
-import com.thoughtworks.datetime.Period;
+import org.joda.time.LocalDateTime;
+import org.joda.time.Period;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,11 +30,12 @@ public class CustomerTest {
         final Movie WallaceAndGromit = new Movie("Wallace and Gromit", Movie.CHILDRENS);
 
         mixedRentals = new LinkedHashSet<Rental>();
-        mixedRentals.add(new Rental(customer, montyPython, Period.of(LocalDate.today(), Duration.ofDays(3))));
-        mixedRentals.add(new Rental(customer, ran, Period.of(LocalDate.today(), Duration.ofDays(1))));
-        mixedRentals.add(new Rental(customer, laConfidential, Period.of(LocalDate.today(), Duration.ofDays(2))));
-        mixedRentals.add(new Rental(customer, starTrek, Period.of(LocalDate.today(), Duration.ofDays(1))));
-        mixedRentals.add(new Rental(customer, WallaceAndGromit, Period.of(LocalDate.today(), Duration.ofDays(6))));
+        LocalDateTime rentedOn = new LocalDateTime();
+        mixedRentals.add(new Rental(customer, montyPython, Period.days(3), rentedOn));
+        mixedRentals.add(new Rental(customer, ran, Period.days(1), rentedOn));
+        mixedRentals.add(new Rental(customer, laConfidential, Period.days(2), rentedOn));
+        mixedRentals.add(new Rental(customer, starTrek, Period.days(1), rentedOn));
+        mixedRentals.add(new Rental(customer, WallaceAndGromit, Period.days(6), rentedOn));
     }
 
     @Test

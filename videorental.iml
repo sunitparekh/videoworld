@@ -94,7 +94,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/unit/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/util/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/unit/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
@@ -243,28 +242,6 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="tw-commons-datetime-1.0.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/runtime/tw-commons-datetime-1.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/lib/sources/tw-commons-datetime-source-1.0.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="tw-commons-ddd-1.0.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/runtime/tw-commons-ddd-1.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/lib/sources/tw-commons-ddd-source-1.0.jar!/" />
-        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">

@@ -1,10 +1,6 @@
 package com.thoughtworks.videorental.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.thoughtworks.datetime.Duration;
-import com.thoughtworks.datetime.LocalDate;
-import com.thoughtworks.datetime.LocalDateTime;
-import com.thoughtworks.datetime.Period;
 import com.thoughtworks.videorental.domain.Customer;
 import com.thoughtworks.videorental.domain.Movie;
 import com.thoughtworks.videorental.domain.Rental;
@@ -13,6 +9,8 @@ import com.thoughtworks.videorental.domain.repository.MovieRepository;
 import com.thoughtworks.videorental.domain.repository.RentalRepository;
 import com.thoughtworks.videorental.domain.repository.TransactionRepository;
 import com.thoughtworks.videorental.interceptor.CustomerAware;
+import org.joda.time.LocalDateTime;
+import org.joda.time.Period;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -55,16 +53,17 @@ public class RentMoviesAction extends ActionSupport implements CustomerAware {
     @Override
     public String execute() throws Exception {
         final Set<Movie> movies = movieRepository.withTitles(movieNames);
-        final Period rentalPeriod = Period.of(LocalDate.today(), Duration.ofDays(rentalDuration));
+        LocalDateTime now = new LocalDateTime();
+        final Period rentalPeriod = Period.days(rentalDuration);
 
         final Set<Rental> rentals = new LinkedHashSet<Rental>();
         for (final Movie movie : movies) {
-            final Rental rental = new Rental(customer, movie, rentalPeriod);
+            final Rental rental = new Rental(customer, movie, rentalPeriod, now);
             rentals.add(rental);
         }
 
         rentalRepository.add(rentals);
-        final Transaction transaction = new Transaction(LocalDateTime.now(), customer, rentals);
+        final Transaction transaction = new Transaction(now, customer, rentals);
         transactionRepository.add(transaction);
 
         statement = customer.statement(transaction.getRentals());

@@ -1,9 +1,5 @@
 package com.thoughtworks.videorental.action;
 
-import com.thoughtworks.datetime.Duration;
-import com.thoughtworks.datetime.LocalDate;
-import com.thoughtworks.datetime.LocalDateTime;
-import com.thoughtworks.datetime.Period;
 import com.thoughtworks.videorental.domain.Customer;
 import com.thoughtworks.videorental.domain.Movie;
 import com.thoughtworks.videorental.domain.Rental;
@@ -13,7 +9,7 @@ import com.thoughtworks.videorental.domain.repository.RentalRepository;
 import com.thoughtworks.videorental.domain.repository.TransactionRepository;
 import com.thoughtworks.videorental.repository.SetBasedMovieRepository;
 import org.hamcrest.Matcher;
-import org.junit.After;
+import org.joda.time.Period;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -48,16 +44,6 @@ public class RentMoviesActionTest {
         rentMoviesAction = new RentMoviesAction(movieRepository, rentalRepository, transactionRepository);
         customer = mock(Customer.class);
         rentMoviesAction.setCustomer(customer);
-    }
-
-    @Before
-    public void fixDate() {
-        LocalDateTime.setSystemDateTime(LocalDateTime.now());
-    }
-
-    @After
-    public void resetDate() {
-        LocalDateTime.resetSystemDateTime();
     }
 
     @Test
@@ -99,7 +85,7 @@ public class RentMoviesActionTest {
     @SuppressWarnings("unchecked")
     private Matcher<Set<Rental>> isRentalsForDurationAndOf(final int days, final Movie firstMovie,
                                                            final Movie... movies) {
-        final Period period = Period.of(LocalDate.today(), Duration.ofDays(days));
+        final Period period = Period.days(days);
 
         final List rentalMatchers = new ArrayList();
         rentalMatchers.add(hasSize(movies.length + 1));
