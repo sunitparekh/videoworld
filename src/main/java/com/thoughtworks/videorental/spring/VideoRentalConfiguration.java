@@ -56,9 +56,9 @@ public class VideoRentalConfiguration {
 
     @Bean(scope = "singleton")
     public MovieRepository movieRepository() {
-        final Movie avatar = new Movie("Avatar", Movie.NEW_RELEASE);
-        final Movie upInTheAir = new Movie("Up In The Air", Movie.REGULAR);
-        final Movie findingNemo = new Movie("Finding Nemo", Movie.CHILDRENS);
+        final Movie avatar = new Movie("Avatar");
+        final Movie upInTheAir = new Movie("Up In The Air");
+        final Movie findingNemo = new Movie("Finding Nemo");
         return new SetBasedMovieRepository(Arrays.asList(avatar, upInTheAir, findingNemo));
     }
 

@@ -12,8 +12,8 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 
 public class TransactionTest {
-    private static final Movie FINDING_NEMO = new Movie("Finding Nemo", Movie.CHILDRENS);
-    private static final Movie SHAWSHANK_REDEMPTION = new Movie("Shawshank Redemption", Movie.REGULAR);
+    private static final Movie FINDING_NEMO = new Movie("Finding Nemo");
+    private static final Movie SHAWSHANK_REDEMPTION = new Movie("Shawshank Redemption");
 
     private static final Customer CUSTOMER_ONE = new Customer("James Cameron");
     private static final Customer CUSTOMER_TWO = new Customer("Quentin Tarantino");

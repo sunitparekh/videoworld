@@ -4,7 +4,6 @@ import java.util.Set;
 
 public class Customer {
     private String name;
-    private int frequentRenterPoints = 0;
 
     public Customer(String name) {
         this.name = name;
@@ -23,16 +22,13 @@ public class Customer {
             final Integer rentalDays = rental.getPeriod().getDays();
 
             result += "  " + rental.getMovie().getTitle() + "  -  $"
-                    + String.valueOf(rental.getMovie().getPrice().getCharge(rentalDays)) + "\n";
+                    + String.valueOf(rental.getMovie().getCharge(rentalDays)) + "\n";
 
-            totalAmount += rental.getMovie().getPrice().getCharge(rentalDays);
-
-            frequentRenterPoints += rental.getMovie().getPrice().getFrequentRenterPoints(rentalDays);
+            totalAmount += rental.getMovie().getCharge(rentalDays);
         }
 
         // add footer lines
-        result += "Amount charged is $" + String.valueOf(totalAmount) + "\n";
-        result += "You have a new total of " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        result += "Amount charged is $" + String.valueOf(totalAmount);
         return result;
     }
 

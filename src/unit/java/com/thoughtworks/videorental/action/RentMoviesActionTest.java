@@ -22,9 +22,9 @@ import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 
 public class RentMoviesActionTest {
-    private static final Movie THE_GODFATHER = new Movie("The Godfather", Movie.REGULAR);
-    private static final Movie PULP_FICTION = new Movie("Pulp Fiction", Movie.REGULAR);
-    private static final Movie FINDING_NEMO = new Movie("Finding Nemo", Movie.CHILDRENS);
+    private static final Movie THE_GODFATHER = new Movie("The Godfather");
+    private static final Movie PULP_FICTION = new Movie("Pulp Fiction");
+    private static final Movie FINDING_NEMO = new Movie("Finding Nemo");
 
     private MovieRepository movieRepository;
     private RentalRepository rentalRepository;

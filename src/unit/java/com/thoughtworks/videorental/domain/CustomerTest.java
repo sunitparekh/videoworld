@@ -23,11 +23,11 @@ public class CustomerTest {
     public void setUp() {
         customer = new Customer("John Smith");
 
-        final Movie montyPython = new Movie("Monty Python and the Holy Grail", Movie.REGULAR);
-        final Movie ran = new Movie("Ran", Movie.REGULAR);
-        final Movie laConfidential = new Movie("LA Confidential", Movie.NEW_RELEASE);
-        final Movie starTrek = new Movie("Star Trek 13.2", Movie.NEW_RELEASE);
-        final Movie WallaceAndGromit = new Movie("Wallace and Gromit", Movie.CHILDRENS);
+        final Movie montyPython = new Movie("Monty Python and the Holy Grail");
+        final Movie ran = new Movie("Ran");
+        final Movie laConfidential = new Movie("LA Confidential");
+        final Movie starTrek = new Movie("Star Trek 13.2");
+        final Movie WallaceAndGromit = new Movie("Wallace and Gromit");
 
         mixedRentals = new LinkedHashSet<Rental>();
         LocalDateTime rentedOn = new LocalDateTime();
@@ -42,8 +42,7 @@ public class CustomerTest {
     public void testEmpty() throws Exception {
         String noRentalsStatement =
                 "Rental Record for John Smith\n"
-                        + "Amount charged is $0.0\n"
-                        + "You have a new total of 0 frequent renter points";
+                        + "Amount charged is $0.0";
         assertEquals(noRentalsStatement, customer.statement(EMPTY_RENTALS));
     }
 
@@ -51,13 +50,12 @@ public class CustomerTest {
     public void testCustomer() throws Exception {
         String expected =
                 "Rental Record for John Smith\n"
-                        + "  Monty Python and the Holy Grail  -  $3.5\n"
-                        + "  Ran  -  $2.0\n"
-                        + "  LA Confidential  -  $6.0\n"
-                        + "  Star Trek 13.2  -  $3.0\n"
+                        + "  Monty Python and the Holy Grail  -  $3.0\n"
+                        + "  Ran  -  $1.0\n"
+                        + "  LA Confidential  -  $2.0\n"
+                        + "  Star Trek 13.2  -  $1.0\n"
                         + "  Wallace and Gromit  -  $6.0\n"
-                        + "Amount charged is $20.5\n"
-                        + "You have a new total of 6 frequent renter points";
+                        + "Amount charged is $13.0";
         assertEquals(expected, customer.statement(mixedRentals));
     }
 

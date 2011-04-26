@@ -1,27 +1,19 @@
 package com.thoughtworks.videorental.domain;
 
 public class Movie {
-    public static final Price CHILDRENS = new ChildrensPrice();
-    public static final Price REGULAR = new RegularPrice();
-    public static final Price NEW_RELEASE = new NewReleasePrice();
-
     private String title;
-    private Price price;
 
-    public Movie(String title, Price price) {
+    public Movie(String title) {
         this.title = title;
-        setPrice(price);
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setPrice(Price price) {
-        this.price = price;
+    public double getCharge(final int daysRented) {
+        return daysRented * 1;
     }
 
-    public Price getPrice() {
-        return price;
-    }
+
 }
