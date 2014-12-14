@@ -1,8 +1,10 @@
 package com.thoughtworks.videorental.domain;
 
+import lombok.EqualsAndHashCode;
 import org.joda.time.LocalDateTime;
 import org.joda.time.Period;
 
+@EqualsAndHashCode
 public class Rental {
     private final Movie movie;
     private final Customer customer;

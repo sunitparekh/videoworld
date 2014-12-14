@@ -1,11 +1,13 @@
 package com.thoughtworks.videorental.domain;
 
+import lombok.EqualsAndHashCode;
 import org.joda.time.LocalDateTime;
 
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+@EqualsAndHashCode
 public class Transaction {
     private final LocalDateTime dateTime;
     private final Customer customer;

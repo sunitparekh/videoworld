@@ -1,8 +1,12 @@
 package com.thoughtworks.videorental.domain;
 
+import lombok.EqualsAndHashCode;
+
+import java.security.Principal;
 import java.util.Set;
 
-public class Customer {
+@EqualsAndHashCode
+public class Customer implements Principal{
     private String name;
 
     public Customer(String name) {
@@ -31,5 +35,4 @@ public class Customer {
         result += "Amount charged is $" + String.valueOf(totalAmount);
         return result;
     }
-
 }

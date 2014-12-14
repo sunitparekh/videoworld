@@ -1,13 +1,17 @@
 <html>
 <head>
-    <title>Current Rentals</title>
+    <#include "includes/common.ftl"/>
+<title>Current Rentals</title>
 </head>
 <body>
+<#include "includes/header.ftl"/>
+
 <h1>Current Rentals</h1>
 <ul>
 <#list rentals as rental>
     <li>${rental.movie.title} (ends ${rental.endDate})</li>
 </#list>
 </ul>
+<#include "includes/footer.ftl"/>
 </body>
 </html>

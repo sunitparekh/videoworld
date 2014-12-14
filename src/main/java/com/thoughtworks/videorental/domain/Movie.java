@@ -1,5 +1,8 @@
 package com.thoughtworks.videorental.domain;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Movie {
     private String title;
 
