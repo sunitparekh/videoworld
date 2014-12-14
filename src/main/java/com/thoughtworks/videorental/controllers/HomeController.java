@@ -22,7 +22,7 @@ public class HomeController {
         this.movieRepository = movieRepository;
     }
 
-    @RequestMapping(value="/home",method = RequestMethod.GET)
+    @RequestMapping(value="/",method = RequestMethod.GET)
     public ModelAndView home(Model model){
         return Views.HOME_PAGE.prepareView(movieRepository.selectAll());
     }

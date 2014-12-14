@@ -33,7 +33,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/login")
                 .and()
-                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/home").failureUrl("/login")
+                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/").failureUrl("/login")
                 .and()
                 .authorizeRequests()
                     .antMatchers("/js/**").permitAll()
