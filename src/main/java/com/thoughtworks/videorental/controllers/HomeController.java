@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by srideep on 13/12/14.
  */
 @Controller
+@RequestMapping("/")
 public class HomeController {
 
     private final MovieRepository movieRepository;
@@ -22,8 +23,8 @@ public class HomeController {
         this.movieRepository = movieRepository;
     }
 
-    @RequestMapping(value="/",method = RequestMethod.GET)
-    public ModelAndView home(Model model){
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView home(){
         return Views.HOME_PAGE.prepareView(movieRepository.selectAll());
     }
 

@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
  * Created by srideep on 14/12/14.
  */
 
-@Component
 public class UserAuthenticationProvider implements org.springframework.security.authentication.AuthenticationProvider {
 
     private CustomerRepository customerRepository;
