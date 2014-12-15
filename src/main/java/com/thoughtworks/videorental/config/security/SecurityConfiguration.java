@@ -25,7 +25,7 @@ import java.util.Arrays;
 @Order(1)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired //TODO: Move this to constructor injection
+    @Autowired //TODO: Move this to constructor injection - currently due to cross dependencies causes NPE if constructor injection is used
     private CustomerRepository customerRepository;
 
     @Override

@@ -25,25 +25,8 @@ public class LoginController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView login() throws Exception {
+    public ModelAndView login() {
         return Views.LOGIN_PAGE.prepareView(customerRepository.selectAll(new CustomersOrderedByNameComparator()));
     }
-
-//    @RequestMapping(method = RequestMethod.POST)
-//    public String login() throws Exception {
-//        if (!StringUtils.hasText(customerName)) {
-//            return Views.LOGIN_PAGE.getViewTemplate();
-//        }
-//
-//        Customer loggedInCustomer = customerRepository.selectUnique(new CustomerWithNameSpecification(customerName));
-//        if (loggedInCustomer == null) {
-//            return Views.LOGIN_PAGE.getViewTemplate();
-//        }
-
-//
-
-//        System.out.println("REDIRECT");
-//        return Views.HOME_PAGE.getRedirectUrl();
-//    }
 
 }
