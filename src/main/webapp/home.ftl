@@ -1,5 +1,6 @@
 <html>
 <head>
+    <#include "includes/common.ftl"/>
     <title>Rent a Movie</title>
     <link href="styles/wizard.css" rel="stylesheet" type="text/css"></link>
     <script type="text/javascript" src="js/wizard.js"></script>
@@ -29,8 +30,9 @@
   </script>
 </head>
 <body>
+    <#include "includes/header.ftl"/>
     <h1>Rent a Movie</h1>
-	<form id="wizard" class="wiz-container" action="rentMovies">
+	<form id="wizard" class="wiz-container" action="rentals" method="post">
 		<ul class="wiz-list">
 			<li><a href="#wizard-1">
 				<h2>Now Showing!</h2>
@@ -75,5 +77,6 @@
 			</div>
 		</div>
 	</form>
+    <#include "includes/footer.ftl"/>
 </body>
 </html>

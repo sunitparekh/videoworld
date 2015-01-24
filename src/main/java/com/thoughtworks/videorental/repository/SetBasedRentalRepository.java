@@ -7,9 +7,11 @@ import com.thoughtworks.videorental.domain.repository.SetBasedRepository;
 import com.thoughtworks.videorental.domain.specification.AndSpecification;
 import com.thoughtworks.videorental.domain.specification.CurrentRentalSpecification;
 import com.thoughtworks.videorental.domain.specification.RentalForCustomerSpecification;
+import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
+@Repository
 public class SetBasedRentalRepository extends SetBasedRepository<Rental> implements RentalRepository {
 
     public SetBasedRentalRepository() {

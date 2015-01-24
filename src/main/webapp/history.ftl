@@ -1,8 +1,11 @@
 <html>
 <head>
+    <#include "includes/common.ftl"/>
     <title>Transaction History</title>
 </head>
 <body>
+    <#include "includes/header.ftl"/>
+
     <h1>Transaction History</h1>
     <ul>
     <#list transactions as transaction>
@@ -14,5 +17,7 @@
 		</li>
 	</#list>
 	</ul>
+    <#include "includes/footer.ftl"/>
+
 </body>
 </html>
