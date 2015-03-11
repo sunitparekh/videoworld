@@ -1,3 +1,6 @@
+# Moved to different lightweight repo with less history objects
+https://github.com/sunitparekh/video-world
+
 VideoWorld - Sample App
 ======
 This is a simple self running web application which may be used as a base to try out TDD, Refactoring etc on a live web app.
